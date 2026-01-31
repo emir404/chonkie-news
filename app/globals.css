@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --color-background: #faf6e3;
+  --color-foreground: #0a0a0a;
+  --color-card-foreground: #0a0a0a;
+  --color-muted-foreground: #716e60;
+  --color-muted: rgba(230, 223, 199, 0.25);
+  --radius-lg: 10px;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
