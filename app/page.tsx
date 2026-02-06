@@ -2,15 +2,21 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import * as motion from "motion/react-client";
 import { Clock } from "@/components/ui/clock";
 import Logo from "@/components/ui/logo";
 import { fetchHomepageArticles, fetchCities } from "@/lib/api";
 import { NewsArticle, City } from "@/lib/types";
 
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+};
+
 // Featured article component (large title - 48px)
 function FeaturedArticle({ article }: { article: NewsArticle }) {
   return (
-    <article className="flex flex-col gap-8">
+    <article className="flex flex-col gap-6">
       <h2 className="text-5xl font-semibold leading-none tracking-[-0.04em] text-card-foreground">
         {article.title}
       </h2>
@@ -115,9 +121,14 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="mx-auto max-w-[1440px] px-8 py-16 lg:px-[120px]">
+      <div className="mx-auto max-w-[1800px] px-20 py-14 lg:px-48">
         {/* Header with city clocks */}
-        <header className="mb-16 flex items-start justify-between">
+        <motion.header
+          className="mb-10 flex items-start justify-between"
+          initial={fadeIn.initial}
+          animate={!isLoading ? fadeIn.animate : fadeIn.initial}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           {/* Left cities */}
           {leftCities.map((city) => (
             <Clock key={city.code} code={city.code} timezone={city.timezone} />
@@ -130,39 +141,44 @@ export default function Home() {
           {rightCities.map((city) => (
             <Clock key={city.code} code={city.code} timezone={city.timezone} />
           ))}
-        </header>
+        </motion.header>
 
         {/* Main content area */}
         <main className="relative">
           {/* Top horizontal separator */}
-          <ContentSeparator className="w-full mb-12" />
+          <ContentSeparator className="w-full mb-10" />
 
           {/* Two column layout with vertical separator */}
-          <div className="flex gap-12">
+          <div className="flex gap-14">
             {/* Left column */}
             <div className="flex-1 flex flex-col">
               {isLoading ? (
                 <>
                   <ArticleSkeleton isFeatured />
-                  <ContentSeparator className="my-12" />
+                  <ContentSeparator className="my-10" />
                   <ArticleSkeleton />
-                  <ContentSeparator className="my-12" />
+                  <ContentSeparator className="my-10" />
                   <ArticleSkeleton />
-                  <ContentSeparator className="my-12" />
+                  <ContentSeparator className="my-10" />
                   <ArticleSkeleton />
                 </>
               ) : (
                 leftColumn.map((article, index) => (
-                  <div key={article.id}>
+                  <motion.div
+                    key={article.id}
+                    initial={fadeIn.initial}
+                    animate={fadeIn.animate}
+                    transition={{ duration: 0.5, delay: 0.15 + index * 0.1, ease: "easeOut" }}
+                  >
                     {article.isFeatured ? (
                       <FeaturedArticle article={article} />
                     ) : (
                       <Article article={article} />
                     )}
                     {index < leftColumn.length - 1 && (
-                      <ContentSeparator className="my-12" />
+                      <ContentSeparator className="my-10" />
                     )}
-                  </div>
+                  </motion.div>
                 ))
               )}
             </div>
@@ -175,25 +191,30 @@ export default function Home() {
               {isLoading ? (
                 <>
                   <ArticleSkeleton />
-                  <ContentSeparator className="my-12" />
+                  <ContentSeparator className="my-10" />
                   <ArticleSkeleton />
-                  <ContentSeparator className="my-12" />
+                  <ContentSeparator className="my-10" />
                   <ArticleSkeleton isFeatured />
-                  <ContentSeparator className="my-12" />
+                  <ContentSeparator className="my-10" />
                   <ArticleSkeleton />
                 </>
               ) : (
                 rightColumn.map((article, index) => (
-                  <div key={article.id}>
+                  <motion.div
+                    key={article.id}
+                    initial={fadeIn.initial}
+                    animate={fadeIn.animate}
+                    transition={{ duration: 0.5, delay: 0.25 + index * 0.1, ease: "easeOut" }}
+                  >
                     {article.isFeatured ? (
                       <FeaturedArticle article={article} />
                     ) : (
                       <Article article={article} />
                     )}
                     {index < rightColumn.length - 1 && (
-                      <ContentSeparator className="my-12" />
+                      <ContentSeparator className="my-10" />
                     )}
-                  </div>
+                  </motion.div>
                 ))
               )}
             </div>

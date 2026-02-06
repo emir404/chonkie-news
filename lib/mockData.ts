@@ -1,14 +1,14 @@
 import { NewsArticle, City } from "./types";
 
 export const mockCities: City[] = [
-  { code: "SF", name: "San Francisco", timezone: "America/Los_Angeles" },
-  { code: "BOS", name: "Boston", timezone: "America/New_York" },
-  { code: "MIA", name: "Miami", timezone: "America/New_York" },
-  { code: "CA", name: "California", timezone: "America/Los_Angeles" },
-  { code: "LA", name: "Los Angeles", timezone: "America/Los_Angeles" },
-  { code: "NY", name: "New York", timezone: "America/New_York" },
-  { code: "TX", name: "Texas", timezone: "America/Chicago" },
-  { code: "CHI", name: "Chicago", timezone: "America/Chicago" },
+  { code: "LON", name: "London", timezone: "Europe/London" },
+  { code: "PAR", name: "Paris", timezone: "Europe/Paris" },
+  { code: "TYO", name: "Tokyo", timezone: "Asia/Tokyo" },
+  { code: "SYD", name: "Sydney", timezone: "Australia/Sydney" },
+  { code: "DXB", name: "Dubai", timezone: "Asia/Dubai" },
+  { code: "NYC", name: "New York", timezone: "America/New_York" },
+  { code: "SIN", name: "Singapore", timezone: "Asia/Singapore" },
+  { code: "BER", name: "Berlin", timezone: "Europe/Berlin" },
 ];
 
 export const mockArticles: NewsArticle[] = [
@@ -26,7 +26,7 @@ Phasellus id diam et tortor tristique molestie quis vel sem. Proin neque augue, 
 
 Quisque purus sapien, rutrum nec lectus ut, dignissim posuere tellus. Sed nec quam condimentum, ullamcorper lacus nec, egestas lectus. Vivamus nec dolor sed metus interdum congue. Cras vitae ipsum arcu. Phasellus pretium, nisl vitae fermentum lacinia, ligula odio commodo mi, ac accumsan orci augue sed ligula. Curabitur faucibus hendrerit elementum. Vestibulum orci urna, dapibus quis lectus facilisis, sagittis consectetur lectus. Phasellus ornare velit sit amet fermentum interdum. Integer faucibus dolor at massa aliquam interdum.`,
     imageUrl: "/mascot.png",
-    city: "SF",
+    city: "LON",
     publishedAt: "2025-01-31T10:00:00Z",
     category: "Technology",
     author: "John Doe",
@@ -40,7 +40,7 @@ Quisque purus sapien, rutrum nec lectus ut, dignissim posuere tellus. Sed nec qu
     content: `Phasellus id diam et tortor tristique molestie quis vel sem. Proin neque augue, lacinia id ultrices eleifend, interdum ut mauris. Duis metus enim, sodales sit amet felis sit amet, fringilla sagittis quam. Vivamus faucibus aliquam magna nec tempus.
 
 Quisque purus sapien, rutrum nec lectus ut, dignissim posuere tellus. Sed nec quam condimentum, ullamcorper lacus nec, egestas lectus. Vivamus nec dolor sed metus interdum congue. Cras vitae ipsum arcu. Phasellus pretium, nisl vitae fermentum lacinia, ligula odio commodo mi, ac accumsan orci augue sed ligula. Curabitur faucibus hendrerit elementum. Vestibulum orci urna, dapibus quis lectus facilisis, sagittis consectetur lectus. Phasellus ornare velit sit amet fermentum interdum. Integer faucibus dolor at massa aliquam interdum.`,
-    city: "NY",
+    city: "PAR",
     publishedAt: "2025-01-31T09:30:00Z",
     category: "Business",
     author: "Jane Smith",
@@ -52,7 +52,7 @@ Quisque purus sapien, rutrum nec lectus ut, dignissim posuere tellus. Sed nec qu
     id: "3",
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content: `Phasellus id diam et tortor tristique molestie quis vel sem. Proin neque augue, lacinia id ultrices eleifend, interdum ut mauris. Duis metus enim, sodales sit amet felis sit amet, fringilla sagittis quam. Vivamus faucibus aliquam magna nec tempus.`,
-    city: "CHI",
+    city: "TYO",
     publishedAt: "2025-01-31T09:00:00Z",
     category: "Politics",
     author: "Mike Johnson",
@@ -68,7 +68,7 @@ Quisque purus sapien, rutrum nec lectus ut, dignissim posuere tellus. Sed nec qu
 Quisque purus sapien, rutrum nec lectus ut, dignissim posuere tellus. Sed nec quam condimentum, ullamcorper lacus nec, egestas lectus. Vivamus nec dolor sed metus interdum congue. Cras vitae ipsum arcu. Phasellus pretium, nisl vitae fermentum lacinia, ligula odio commodo mi, ac accumsan orci augue sed ligula. Curabitur faucibus hendrerit elementum. Vestibulum orci urna, dapibus quis lectus facilisis, sagittis consectetur lectus. Phasellus ornare velit sit amet fermentum interdum. Integer faucibus dolor at massa aliquam interdum. Fringilla sagittis quam. Vivamus faucibus aliquam magna nec tempus.
 
 Nullam non tortor volutpat, eleifend enim id, viverra velit. Curabitur in justo semper, commodo est sed, rutrum justo.`,
-    city: "LA",
+    city: "SYD",
     publishedAt: "2025-01-31T08:30:00Z",
     category: "Entertainment",
     author: "Sarah Williams",
@@ -82,7 +82,7 @@ Nullam non tortor volutpat, eleifend enim id, viverra velit. Curabitur in justo 
     content: `Phasellus id diam et tortor tristique molestie quis vel sem. Proin neque augue, lacinia id ultrices eleifend, interdum ut mauris. Duis metus enim, sodales sit amet felis sit amet, fringilla sagittis quam. Vivamus faucibus aliquam magna nec tempus.
 
 Quisque purus sapien, rutrum nec lectus ut, dignissim posuere tellus. Sed nec quam condimentum, ullamcorper lacus nec, egestas lectus. Vivamus nec dolor sed metus interdum congue. Cras vitae ipsum arcu. Phasellus pretium, nisl vitae fermentum lacinia, ligula odio commodo mi, ac accumsan orci augue sed ligula. Curabitur faucibus hendrerit elementum. Vestibulum orci urna, dapibus quis lectus facilisis, sagittis consectetur lectus. Phasellus ornare velit sit amet fermentum interdum. Integer faucibus dolor at massa aliquam interdum.`,
-    city: "BOS",
+    city: "DXB",
     publishedAt: "2025-01-31T08:00:00Z",
     category: "Sports",
     author: "Tom Brady",
@@ -98,7 +98,7 @@ Quisque purus sapien, rutrum nec lectus ut, dignissim posuere tellus. Sed nec qu
 Quisque purus sapien, rutrum nec lectus ut, dignissim posuere tellus. Sed nec quam condimentum, ullamcorper lacus nec, egestas lectus. Vivamus nec dolor sed metus interdum congue. Cras vitae ipsum arcu. Phasellus pretium, nisl vitae fermentum lacinia, ligula odio commodo mi, ac accumsan orci augue sed ligula. Curabitur faucibus hendrerit elementum. Vestibulum orci urna, dapibus quis lectus facilisis, sagittis consectetur lectus. Phasellus ornare velit sit amet fermentum interdum. Integer faucibus dolor at massa aliquam interdum. Fringilla sagittis quam. Vivamus faucibus aliquam magna nec tempus.
 
 Nullam non tortor volutpat, eleifend enim id, viverra velit. Curabitur in justo semper, commodo est sed, rutrum justo.`,
-    city: "MIA",
+    city: "NYC",
     publishedAt: "2025-01-31T07:30:00Z",
     category: "Weather",
     author: "Emily Davis",
@@ -117,7 +117,7 @@ Quisque condimentum vulputate dui. Aenean ullamcorper mi at blandit egestas. Int
 
 Quisque purus sapien, rutrum nec lectus ut, dignissim posuere tellus. Sed nec quam condimentum, ullamcorper lacus nec, egestas lectus. Vivamus nec dolor sed metus interdum congue. Cras vitae ipsum arcu. Phasellus pretium, nisl vitae fermentum lacinia, ligula odio commodo mi, ac accumsan orci augue sed ligula. Curabitur faucibus hendrerit elementum. Vestibulum orci urna, dapibus quis lectus facilisis, sagittis consectetur lectus. Phasellus ornare velit sit amet fermentum interdum. Integer faucibus dolor at massa aliquam interdum.`,
     imageUrl: "/mascot.png",
-    city: "TX",
+    city: "SIN",
     publishedAt: "2025-01-31T07:00:00Z",
     category: "Science",
     author: "Dr. Alex Chen",
@@ -133,7 +133,7 @@ Quisque purus sapien, rutrum nec lectus ut, dignissim posuere tellus. Sed nec qu
 Quisque purus sapien, rutrum nec lectus ut, dignissim posuere tellus. Sed nec quam condimentum, ullamcorper lacus nec, egestas lectus. Vivamus nec dolor sed metus interdum congue. Cras vitae ipsum arcu. Phasellus pretium, nisl vitae fermentum lacinia, ligula odio commodo mi, ac accumsan orci augue sed ligula. Curabitur faucibus hendrerit elementum. Vestibulum orci urna, dapibus quis lectus facilisis, sagittis consectetur lectus. Phasellus ornare velit sit amet fermentum interdum. Integer faucibus dolor at massa aliquam interdum. Fringilla sagittis quam. Vivamus faucibus aliquam magna nec tempus.
 
 Nullam non tortor volutpat, eleifend enim id, viverra velit. Curabitur in justo semper, commodo est sed, rutrum justo.`,
-    city: "CA",
+    city: "BER",
     publishedAt: "2025-01-31T06:30:00Z",
     category: "Health",
     author: "Lisa Martinez",
